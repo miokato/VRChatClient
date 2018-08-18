@@ -19,9 +19,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,3 +88,8 @@ STATIC_URL = '/static/'
 VRC_USERNAME = os.getenv('VRC_USERNAME')
 VRC_PASSWORD = os.getenv('VRC_PASSWORD')
 VRC_BASE_URL = 'https://api.vrchat.cloud/api/1/'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:3000',
+    '127.0.0.1:3000',
+)
