@@ -1,0 +1,6 @@
+.venv/
+.__pycache__/
+.idea/
+data/
+db.sqlite3
+client.ipynb
